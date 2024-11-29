@@ -16,7 +16,6 @@ double WiFi6Communication::calculateThroughput() {
         return 0.0;
     }
 
-    // Debugging: Print out all timestamps and latencies
     std::cout << "Debug - Timestamps: ";
     for (const auto& ts : timestamps) {
         std::cout << ts << " ";
@@ -27,13 +26,11 @@ double WiFi6Communication::calculateThroughput() {
     }
     std::cout << std::endl;
 
-    // Total data in bits (8192 bits per timestamp, assuming each represents 1 KB)
     double totalData = latencies.size() * 8192.0;
 
-    // Ensure a minimum time difference to prevent division by zero
+    
     double totalTime = std::max(timestamps.back() / 1000.0, 0.001);
 
-    // Return throughput in Mbps (Mega-bits per second)
     double throughput = (totalData / totalTime) / 1e6;
 
     std::cout << "Debug - Total Data: " << totalData << " bits\n";
@@ -95,9 +92,8 @@ void WiFi6Communication::runSimulation() {
         }
 
         remainingUsers -= usersThisFrame;
-        currentTime += 5.0; // Move to the next frame (frame duration is 5 ms)
+        currentTime += 5.0; 
 
-        // Debugging: Print the timestamps after every frame
         std::cout << "Timestamps after this frame: ";
         for (const double& ts : timestamps) {
             std::cout << ts << " ";

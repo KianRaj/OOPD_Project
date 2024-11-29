@@ -10,8 +10,8 @@ public:
 
     // Function declarations
     double calculateThroughput();
-    double calculateAverageLatency();  // Declaration of average latency function
-    double calculateMaxLatency();      // Declaration of max latency function
+    double calculateAverageLatency();  
+    double calculateMaxLatency();      
 
     void runSimulation();
 

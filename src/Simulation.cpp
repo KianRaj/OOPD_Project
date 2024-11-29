@@ -45,7 +45,7 @@ double Simulation::calculateThroughput() {
     }
 
     // Return throughput in Mbps (Mega-bits per second)
-    return (totalData / totalTime) / 1e6;  // Divide by 1e6 to convert from bps to Mbps
+    return (totalData / totalTime) / 1e6;  
 }
 
 

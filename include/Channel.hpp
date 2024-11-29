@@ -5,18 +5,16 @@
 
 class Channel {
 private:
-    int bw;   // Channel bandwidth
-    bool isBusy;     // Channel state (busy or free)
+    int bw;  
+    bool isBusy;     
 
 public:
-    // Constructor
     Channel(int bandwidth);
 
-    // Methods to manage the channel
-    bool sniffChannel();       // Check if the channel is available
-    void occupyChannel();      // Occupy the channel
-    void releaseChannel();     // Release the channel
-    int getBandwidth() const;  // Get the channel's bandwidth
+    bool sniffChannel();       
+    void occupyChannel();      
+    void releaseChannel();     
+    int getBandwidth() const; 
 };
 
 #endif

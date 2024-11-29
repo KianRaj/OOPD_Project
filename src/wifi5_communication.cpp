@@ -11,8 +11,8 @@ WiFi5Communication::WiFi5Communication(int numUsers, int bw)
 void WiFi5Communication::runSimulation() {
     std::cout << "WiFi 5 Simulation MU-MIMO\n";
 
-    double nrnd;
-    std::cout << "Enter number of rounds: ";
+    double nrnd;//nrnd
+    std::cout << "Enter number of pkt per user: ";
     std::cin >> nrnd;
 
    
@@ -21,12 +21,12 @@ void WiFi5Communication::runSimulation() {
     double csiTime = 0.012;
     double timeSlot = 15.0;
     double currentTime = 0.0;
-    double  packetTT= 0.614;
+    double  packetTT= 0.0614;
 
     int totalpackets = numUsers * nrnd;
     int sentpacket = 0;
 
-    std::vector<int> packetsRemaining(numUsers,nrnd); // Packets left for each user
+    std::vector<int> packetsRemaining(numUsers,nrnd);
 
     while (sentpacket < totalpackets)
     {

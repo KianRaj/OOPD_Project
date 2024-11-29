@@ -1,36 +1,31 @@
 #include "CommunicationPoint.hpp"
-#include "DataPacket.hpp"  // Include DataPacket instead of Packet
+#include "DataPacket.hpp"  
 #include <iostream>
 #include <algorithm>
-#include <random>  // For modern random number generation
+#include <random>  
 
-// Constructor for CommunicationPoint
 CommunicationPoint::CommunicationPoint(int numUsers, int bw) 
     : users(), channel(bw), numUsers(numUsers) {
     // Pre-populate users using STL
     users.reserve(numUsers);
     for (int i = 0; i < numUsers; ++i) {
-        users.emplace_back(User(i));  // Ensure User(i) constructor exists
+        users.emplace_back(User(i));  
     }
 }
 
-// Add a user to the CommunicationPoint
 void CommunicationPoint::addUser(const User& user) {
     users.push_back(user);
     std::cout << "Added User " << user.getUserId() << " to the Access Point.\n";
 }
 
-// Sniff the channel (returns whether the channel is available)
 bool CommunicationPoint::sniffChannel() {
     return channel.sniffChannel();
 }
 
-// Occupy the channel (assume this function is already in Channel)
 void CommunicationPoint::occupyChannel() {
     channel.occupyChannel();
 }
 
-// Release the channel (assume this function is already in Channel)
 void CommunicationPoint::releaseChannel() {
     channel.releaseChannel();
 }
