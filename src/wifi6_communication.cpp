@@ -6,8 +6,8 @@
 #include<iomanip>
 
 
-WiFi6Communication::WiFi6Communication(int numUsers, int bandwidth)
-    : Simulation(numUsers, bandwidth), subChannelWidth(4),dataRate(133.33) {}
+WiFi6Communication::WiFi6Communication(int numUsers, int bw)
+    : Simulation(numUsers, bw), subChannelWidth(4),dataRate(133.33) {}
 
 
 double WiFi6Communication::calculateThroughput() {
@@ -42,24 +42,7 @@ double WiFi6Communication::calculateThroughput() {
 
     return throughput;
 }
-/*
-double WiFi6Communication::calculateAverageLatency()
-{
-    if (latencies.empty())
-        return 0.0;
 
-    double totalLatency = std::accumulate(latencies.begin(), latencies.end(), 0.0);
-    return totalLatency / latencies.size();
-}
-
-double WiFi6Communication::calculateMaxLatency()
-{
-    if (latencies.empty())
-        return 0.0;
-
-    return *std::max_element(latencies.begin(), latencies.end());
-}
-*/
 void WiFi6Communication::runSimulation() {
     std::cout << " WiFi 6 Simulation OFDMA...\n";
 
@@ -73,7 +56,7 @@ void WiFi6Communication::runSimulation() {
     }
     subChannelWidth = userInputSubChannelWidth;
 
-    int numSubChannels = bandwidth / subChannelWidth;
+    int numSubChannels = bw / subChannelWidth;
     double dataRatePerSubChannel = (dataRate * subChannelWidth) / 20.0;
     double transmissionTime = (8192.0 / (dataRatePerSubChannel * 1e6)) * 1000.0;
 
@@ -83,7 +66,7 @@ void WiFi6Communication::runSimulation() {
         return;
     }
 
-    std::cout << "Total Bandwidth: " << bandwidth << " MHz\n";
+    std::cout << "Total Bandwidth: " << bw << " MHz\n";
     std::cout << "Sub-channel Width: " << subChannelWidth << " MHz\n";
     std::cout << "Number of Sub-channels: " << numSubChannels << "\n";
     std::cout << "Transmission Time per Packet: " << std::fixed << std::setprecision(4) << transmissionTime << " ms\n\n";

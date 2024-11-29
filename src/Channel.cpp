@@ -2,7 +2,7 @@
 #include <iostream>
 #include <random>  
 
-Channel::Channel(int bandwidth) : bandwidth(bandwidth), isBusy(false) {}
+Channel::Channel(int bw) : bw(bw), isBusy(false) {}
 
 bool Channel::sniffChannel() {
     bool isAvailable = !isBusy && (rand()%2==0);
@@ -22,5 +22,5 @@ void Channel::releaseChannel() {
 }
 
 int Channel::getBandwidth() const {
-    return bandwidth;  
+    return bw;  
 }

@@ -5,8 +5,8 @@
 #include <iomanip>
 #include <numeric>
 
-WiFi5Communication::WiFi5Communication(int numUsers, int bandwidth)
-    : Simulation(numUsers, bandwidth) {}
+WiFi5Communication::WiFi5Communication(int numUsers, int bw)
+    : Simulation(numUsers, bw) {}
 
 void WiFi5Communication::runSimulation() {
     std::cout << "WiFi 5 Simulation MU-MIMO\n";

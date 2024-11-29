@@ -1,8 +1,8 @@
 #include "Simulation.hpp"
 #include "DataPacket.hpp"
 
-Simulation::Simulation(int numUsers, int bandwidth)
-    : numUsers(numUsers), bandwidth(bandwidth) {}
+Simulation::Simulation(int numUsers, int bw)
+    : numUsers(numUsers), bw(bw) {}
 
 
 

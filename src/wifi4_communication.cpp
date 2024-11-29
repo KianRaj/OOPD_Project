@@ -6,8 +6,8 @@
 #include <algorithm>
 #include <numeric> // For accumulate
 
-WiFi4Communication::WiFi4Communication(int numUsers, int bandwidth)
-    : Simulation(numUsers, bandwidth) {}
+WiFi4Communication::WiFi4Communication(int numUsers, int bw)
+    : Simulation(numUsers,bw) {}
 
 double WiFi4Communication::calculateThroughput()
 {

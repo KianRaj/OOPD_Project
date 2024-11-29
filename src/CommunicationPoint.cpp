@@ -5,8 +5,8 @@
 #include <random>  // For modern random number generation
 
 // Constructor for CommunicationPoint
-CommunicationPoint::CommunicationPoint(int numUsers, int bandwidth) 
-    : users(), channel(bandwidth), numUsers(numUsers) {
+CommunicationPoint::CommunicationPoint(int numUsers, int bw) 
+    : users(), channel(bw), numUsers(numUsers) {
     // Pre-populate users using STL
     users.reserve(numUsers);
     for (int i = 0; i < numUsers; ++i) {

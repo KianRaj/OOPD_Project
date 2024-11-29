@@ -5,7 +5,7 @@
 
 class WiFi5Communication : public Simulation {
 public:
-    WiFi5Communication(int numUsers, int bandwidth);
+    WiFi5Communication(int numUsers, int bw);
     void runSimulation() override;
     double calculateThroughput(int totalpackets, double totalTime);
     double calculateAverageLatency();

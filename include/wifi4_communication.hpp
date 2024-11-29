@@ -6,7 +6,7 @@
 
 class WiFi4Communication : public Simulation {
 public:
-    WiFi4Communication(int numUsers, int bandwidth);
+    WiFi4Communication(int numUsers, int bw);
 
     // Function declarations
     double calculateThroughput();

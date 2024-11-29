@@ -7,7 +7,7 @@
 
 class Simulation {
 public:
-    Simulation(int numUsers, int bandwidth);
+    Simulation(int numUsers, int bw);
 
     virtual double calculateThroughput();  // Virtual method to calculate throughput
     double calculateAverageLatency();//virtual
@@ -17,7 +17,7 @@ public:
 
 protected:
     int numUsers;
-    int bandwidth;
+    int bw;
     std::vector<double> latencies;
     std::vector<int> timestamps;
 };

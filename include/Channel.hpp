@@ -5,7 +5,7 @@
 
 class Channel {
 private:
-    int bandwidth;   // Channel bandwidth
+    int bw;   // Channel bandwidth
     bool isBusy;     // Channel state (busy or free)
 
 public:
