@@ -6,23 +6,13 @@ Simulation::Simulation(int numUsers, int bw)
 
 
 
-/*
-double Simulation::calculateThroughput() {
-    if (timestamps.empty())
-        return 0.0;
-
-    double totalData = timestamps.size()*1.0;  // Total data in bits (1 KB per timestamp)
-    double totalTime = timestamps.back() ;  // Convert ms to seconds
-
-    return (totalTime * 8.0) / (totalTime/1000.0); // Throughput in Mbps
-}*/
 double Simulation::calculateThroughput() {
     if (timestamps.empty()) {
         std::cout << "Error: Timestamps are empty!" << std::endl;
         return 0.0;
     }
 
-    // Debugging: Print timestamps to ensure they are populated
+    
     std::cout << "Timestamps (in ms): ";
     for (double ts : timestamps) {
         std::cout << ts << " ";

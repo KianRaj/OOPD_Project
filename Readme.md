@@ -34,7 +34,7 @@ WiFi 5, or **802.11ac**, introduces the concept of **Multi-User MIMO (MU-MIMO)**
 
 - **Initial Broadcast**: The AP sends a **single broadcast packet** to all users.
 - **Channel State Information (CSI)**: Each user sends **200-byte** CSI packets back to the AP.
-- After this setup, the users can transmit in parallel for a total of **15 ms**.
+- After this setup, the users can transmit in parallel for a ttl of **15 ms**.
 
 ### Key Simulation Features:
 - **Round-Robin Scheduling**: After the initial setup, the users communicate in parallel using round-robin scheduling.
